@@ -2,8 +2,24 @@ Git commands
 
 1. CLONE REPOSITORY - get a new copy of the repository on your machine
 
-    git clone https://github.com/mihaisarbu/cavu-training.git
+    git clone git@github.com:mihaisarbu/cavu-training.git
 
 2. CREATE NEW BRANCH - create a new local branch
 
     git checkout -b <author name>/<issue name>
+
+3. ADD FILES - add new or edited files to be commited
+
+    - add specific file:
+    git add <file>  
+
+    - add all new and modified files:
+    git add .
+
+4. COMMIT CHANGES - commit all the added files
+
+    git commit -m "<commit message>"
+
+5. ADD AND COMMIT MODIFIED FILES - shortcut to add all the modified files and commit them
+
+    git commit -a -m "<commit message>"
