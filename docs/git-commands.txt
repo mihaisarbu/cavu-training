@@ -1,0 +1,9 @@
+Git commands
+
+1. CLONE REPOSITORY - get a new copy of the repository on your machine
+
+    git clone https://github.com/mihaisarbu/cavu-training.git
+
+2. CREATE NEW BRANCH - create a new local branch
+
+    git checkout -b <author name>/<issue name>
