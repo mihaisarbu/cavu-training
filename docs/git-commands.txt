@@ -8,7 +8,11 @@ Git commands
 
     git checkout -b <author name>/<issue name>
 
-3. ADD FILES - add new or edited files to be commited
+3. CHECK STATUS - check the status of all new, modified or removed files
+
+    git status
+
+4. ADD FILES - add new or edited files to be commited
 
     - add specific file:
     git add <file>  
@@ -16,10 +20,18 @@ Git commands
     - add all new and modified files:
     git add .
 
-4. COMMIT CHANGES - commit all the added files
+5. COMMIT CHANGES - commit all the added files
 
     git commit -m "<commit message>"
 
-5. ADD AND COMMIT MODIFIED FILES - shortcut to add all the modified files and commit them
+6. ADD AND COMMIT MODIFIED FILES - shortcut to add all the modified files and commit them
 
     git commit -a -m "<commit message>"
+
+7. PUSH CHANGES - push all the commited files
+
+    - initial push:
+    git push --set-upstream origin <author name>/<issue name>
+
+    - subsequent pushes:
+    git push
