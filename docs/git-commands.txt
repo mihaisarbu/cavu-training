@@ -1,4 +1,4 @@
-Git commands
+Git Commands
 
 1. CLONE REPOSITORY - get a new copy of the repository on your machine
 
@@ -28,7 +28,7 @@ Git commands
 
     git commit -a -m "<commit message>"
 
-7. PUSH CHANGES - push all the commited files
+7. PUSH CHANGES - push all the commited files to the remote branch
 
     - initial push:
     git push --set-upstream origin <author name>/<issue name>
