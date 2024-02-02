@@ -8,6 +8,7 @@ window.onload = () => {
                     document.getElementById(`class${i}`).style.backgroundColor = "white";
                 }
             }
+            sessionStorage.setItem("class", document.getElementById(`className${a}`).innerHTML.substring(0, document.getElementById(`className${a}`).innerHTML.length - 1));
         };
     }
 };

@@ -9,5 +9,6 @@ window.onload = () => {
                 }
             }
         };
+        sessionStorage.setItem("hero", document.getElementById(`heroName${a}`).innerHTML.substring(0, document.getElementById(`heroName${a}`).innerHTML.length - 1));
     }
 };
