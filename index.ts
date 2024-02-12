@@ -7,6 +7,12 @@ window.onload = () => {
                     document.getElementById(`class${i}`).style.backgroundColor = "white";
                 }
             }
+            sessionStorage.setItem("class", document.getElementById(`className${a}`).innerHTML.substring(0, document.getElementById(`className${a}`).innerHTML.length-1));
         }
+    }
+
+    document.getElementById(`myButton`).onclick = function () {
+        window.alert(`Your selected class is: ${sessionStorage.getItem("class")}`);
+        location.href = '/hero.html';
     }
 };

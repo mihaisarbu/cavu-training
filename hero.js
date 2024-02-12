@@ -8,7 +8,11 @@ window.onload = () => {
                     document.getElementById(`hero${i}`).style.backgroundColor = "white";
                 }
             }
+            sessionStorage.setItem("hero", document.getElementById(`heroName${a}`).innerHTML.substring(0, document.getElementById(`heroName${a}`).innerHTML.length - 1));
         };
-        sessionStorage.setItem("hero", document.getElementById(`heroName${a}`).innerHTML.substring(0, document.getElementById(`heroName${a}`).innerHTML.length - 1));
     }
+    document.getElementById(`myButton2`).onclick = function () {
+        window.alert(`Your selected hero is: ${sessionStorage.getItem("hero")}`);
+        location.href = '/menu.html';
+    };
 };
