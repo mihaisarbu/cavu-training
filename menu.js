@@ -1,5 +1,33 @@
 "use strict";
+const stats = ["Strength", "Constitution", "Wisdom", "Charisma", "Dexterity", "Intelligence"];
 window.onload = () => {
+    for (let stat of stats) {
+        sessionStorage.setItem(stat, "10");
+    }
+    for (let i = 0; i < 6; i++) {
+        document.getElementById(`stat${i}-`).onclick = function () {
+            if (parseInt(sessionStorage.getItem(stats[i])) > 10) {
+                const newValue = `${parseInt(sessionStorage.getItem(stats[i])) - 1}`;
+                sessionStorage.setItem(stats[i], newValue);
+                document.getElementById(`stat${i}`).innerHTML = newValue;
+                document.getElementById(`points`).innerHTML = `${parseInt(document.getElementById(`points`).innerHTML) + 1}`;
+            }
+            else {
+                window.alert(`You cannot reduce ${stats[i]} under 10`);
+            }
+        };
+        document.getElementById(`stat${i}+`).onclick = function () {
+            if (parseInt(document.getElementById(`points`).innerHTML) > 0) {
+                const newValue = `${parseInt(sessionStorage.getItem(stats[i])) + 1}`;
+                sessionStorage.setItem(stats[i], newValue);
+                document.getElementById(`stat${i}`).innerHTML = newValue;
+                document.getElementById(`points`).innerHTML = `${parseInt(document.getElementById(`points`).innerHTML) - 1}`;
+            }
+            else {
+                window.alert(`Tough luck you've run out of points!`);
+            }
+        };
+    }
     switch (sessionStorage.getItem("class")) {
         case "Barbarian":
             {
