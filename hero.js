@@ -13,6 +13,6 @@ window.onload = () => {
     }
     document.getElementById(`myButton2`).onclick = function () {
         window.alert(`Your selected hero is: ${sessionStorage.getItem("hero")}`);
-        location.href = '/menu.html';
+        location.href = '/stats.html';
     };
 };
