@@ -1,46 +1,13 @@
 "use strict";
-const data = {
-    "start": [
-        {
-            "name": "Attack",
-            "imagePath": "assets/attack.png",
-            "description": "close range attack with your weapon",
-            "range": 1,
-            "base": 6,
-            "modifier": "Strength",
-            "ratio": 0.1
-        },
-        {
-            "name": "Ranged Attack",
-            "imagePath": "assets/ranged.png",
-            "description": "range attack with your bow and arrows",
-            "range": 3,
-            "base": 4,
-            "modifier": "Dexterity",
-            "ratio": 0.1
-        },
-        {
-            "name": "Fireball",
-            "imagePath": "assets/fireball.png",
-            "description": "magic attack from medium range",
-            "range": 2,
-            "base": 4,
-            "modifier": "Intelligence",
-            "ratio": 0.1
-        },
-        {
-            "name": "Lesser Heal",
-            "imagePath": "assets/lesserHeal.png",
-            "description": "self healing a small amount of your health",
-            "range": 0,
-            "base": 4,
-            "modifier": "Wisdom",
-            "ratio": 0.1
-        }
-    ]
-};
+let startAbilities;
+fetch('data/abilities.json').then(response => response.json()).then(jsonData => { startAbilities = jsonData.start; });
 window.onload = () => {
     for (let a = 0; a < 4; a++) {
+        document.getElementById(`abilityName${a}`).innerHTML = startAbilities[a].name;
+        document.getElementById(`img${a}`).src = startAbilities[a].imagePath;
+        document.getElementById(`description${a}`).innerHTML = startAbilities[a].description;
+        document.getElementById(`range${a}`).innerHTML = startAbilities[a].range.toString();
+        document.getElementById(`modifier${a}`).innerHTML = startAbilities[a].modifier;
         document.getElementById(`ability${a}`).onclick = function () {
             document.getElementById(`ability${a}`).style.backgroundColor = "yellow";
             for (let i = 0; i < 4; i++) {

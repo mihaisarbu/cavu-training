@@ -1,6 +1,12 @@
 "use strict";
-const stats = ["Strength", "Constitution", "Wisdom", "Charisma", "Dexterity", "Intelligence"];
+let stats;
+let charClass;
+fetch('data/globals.json').then(response => response.json()).then(jsonData => {
+    stats = jsonData.stats;
+    charClass = jsonData.class;
+});
 window.onload = () => {
+    console.log(charClass);
     for (let stat of stats) {
         sessionStorage.setItem(stat, "10");
     }
@@ -24,7 +30,7 @@ window.onload = () => {
                 document.getElementById(`points`).innerHTML = `${parseInt(document.getElementById(`points`).innerHTML) - 1}`;
             }
             else {
-                window.alert(`You have no more points to alocate`);
+                window.alert(`You have no more points to allocate`);
             }
         };
     }
@@ -72,4 +78,12 @@ window.onload = () => {
             break;
         }
     }
+    document.getElementById(`myButton3`).onclick = function () {
+        if (parseInt(document.getElementById(`points`).innerHTML) > 0) {
+            window.alert(`You still have to assign ${document.getElementById(`points`).innerHTML} points`);
+        }
+        else {
+            location.href = '/ability.html';
+        }
+    };
 };

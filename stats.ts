@@ -1,4 +1,9 @@
-const stats: string[] = ["Strength", "Constitution", "Wisdom", "Charisma", "Dexterity", "Intelligence"];
+let stats : any[];
+let charClass : any[];
+fetch('data/globals.json').then(response => response.json()).then(jsonData => {
+    stats = jsonData.stats;
+    charClass = jsonData.class;
+});
 
 window.onload = () => {
     for(let stat of stats){
@@ -26,7 +31,7 @@ window.onload = () => {
                 document.getElementById(`points`).innerHTML = `${parseInt(document.getElementById(`points`).innerHTML) - 1}`;
             }
             else{
-                window.alert(`You have no more points to alocate`);
+                window.alert(`You have no more points to allocate`);
             }
         }
     }
@@ -66,6 +71,15 @@ window.onload = () => {
         case "Revy": {
             (<HTMLImageElement>document.getElementById("hero")).src = "https://static.wikia.nocookie.net/villains/images/4/44/Revy_Full.png";
             break;
+        }
+    }
+
+    document.getElementById(`myButton3`).onclick = function () {
+        if(parseInt(document.getElementById(`points`).innerHTML) > 0){
+            window.alert(`You still have to assign ${document.getElementById(`points`).innerHTML} points`);
+        }
+        else{
+            location.href = '/ability.html';
         }
     }
 };
