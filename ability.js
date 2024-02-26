@@ -1,4 +1,3 @@
-"use strict";
 let startAbilities;
 fetch('data/abilities.json').then(response => response.json()).then(jsonData => { startAbilities = jsonData.start; });
 window.onload = () => {
@@ -18,3 +17,4 @@ window.onload = () => {
         };
     }
 };
+export {};

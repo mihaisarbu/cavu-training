@@ -1,3 +1,5 @@
+import { selectionCheck } from './helpers/helper.js';
+
 let startAbilities : any;
 fetch('data/abilities.json').then(response => response.json()).then(jsonData => {startAbilities = jsonData.start});
 

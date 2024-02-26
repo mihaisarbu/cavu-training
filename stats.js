@@ -6,7 +6,6 @@ fetch('data/globals.json').then(response => response.json()).then(jsonData => {
     charClass = jsonData.class;
 });
 window.onload = () => {
-    console.log(charClass);
     for (let stat of stats) {
         sessionStorage.setItem(stat, "10");
     }
